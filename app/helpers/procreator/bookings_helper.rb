@@ -1,0 +1,2 @@
+module Procreator::BookingsHelper
+end

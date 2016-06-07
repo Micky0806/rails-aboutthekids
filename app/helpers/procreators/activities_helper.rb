@@ -1,0 +1,2 @@
+module Procreators::ActivitiesHelper
+end
