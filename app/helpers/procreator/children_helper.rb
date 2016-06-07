@@ -1,0 +1,2 @@
+module Procreator::ChildrenHelper
+end
