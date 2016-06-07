@@ -11,10 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607102113) do
+ActiveRecord::Schema.define(version: 20160607103943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "category"
+    t.boolean  "open_monday"
+    t.boolean  "open_tuesday"
+    t.boolean  "open_wednesday"
+    t.boolean  "open_thursday"
+    t.boolean  "open_friday"
+    t.boolean  "open_saturday"
+    t.boolean  "open_sunday"
+    t.boolean  "trial_monday"
+    t.boolean  "trial_tuesday"
+    t.boolean  "trial_wednesday"
+    t.boolean  "trial_thursday"
+    t.boolean  "trial_friday"
+    t.boolean  "trial_saturday"
+    t.boolean  "trial_sunday"
+    t.integer  "trial_capacity"
+    t.string   "photo"
+    t.string   "address"
+    t.string   "city"
+    t.date     "period_beginning"
+    t.date     "period_ending"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.string   "review"
