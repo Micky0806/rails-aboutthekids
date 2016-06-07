@@ -11,10 +11,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160606212208) do
+ActiveRecord::Schema.define(version: 20160607131950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "category"
+    t.boolean  "open_monday"
+    t.boolean  "open_tuesday"
+    t.boolean  "open_wednesday"
+    t.boolean  "open_thursday"
+    t.boolean  "open_friday"
+    t.boolean  "open_saturday"
+    t.boolean  "open_sunday"
+    t.boolean  "trial_monday"
+    t.boolean  "trial_tuesday"
+    t.boolean  "trial_wednesday"
+    t.boolean  "trial_thursday"
+    t.boolean  "trial_friday"
+    t.boolean  "trial_saturday"
+    t.boolean  "trial_sunday"
+    t.integer  "trial_capacity"
+    t.string   "photo"
+    t.string   "address"
+    t.string   "city"
+    t.date     "period_beginning"
+    t.date     "period_ending"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.text     "review"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date     "trial_day"
+  end
+
+  create_table "children", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -29,6 +74,12 @@ ActiveRecord::Schema.define(version: 20160606212208) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.boolean  "owner"
+    t.string   "photo"
+    t.string   "company_name"
+    t.string   "phone_number"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
