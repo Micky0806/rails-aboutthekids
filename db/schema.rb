@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607103943) do
+ActiveRecord::Schema.define(version: 20160607131950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,13 +42,14 @@ ActiveRecord::Schema.define(version: 20160607103943) do
     t.date     "period_ending"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "user_id"
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.string   "review"
-    t.string   "trial_day"
+    t.text     "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date     "trial_day"
   end
 
   create_table "children", force: :cascade do |t|
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 20160607103943) do
     t.string   "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
