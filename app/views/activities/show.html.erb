@@ -1,0 +1,11 @@
+
+<h2><%= @activity.name %></h2>
+<%= activity.photo %>
+<%= activity.description %>
+<%= activity.city %>
+<%= activity.address %>
+
+<p>From <%= activity.period_beginning %> till <%= activity.period_ending %></p>
+
+
+<h3> <%= link_to "List of all activities", activities_path %> </h3>

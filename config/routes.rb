@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # as procreator
   namespace :procreator do
     resources :children, only: [:index, :new, :create, :destroy]
-  ​
+
     resources :bookings, only: [:index, :show] do
       member do
         patch :cancel

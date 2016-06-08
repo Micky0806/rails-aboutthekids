@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Activity.destroy_all
+
+Activity.create(name: "Basketball", description: "Always wanted to feel like Michael Jordan?")
+Activity.create(name: "Painting", description: "The best fingerpaiting lessons in Amsterdam")
+Activity.create(name: "Piano lessons", description: "Learing to play the piano is never been more fun")

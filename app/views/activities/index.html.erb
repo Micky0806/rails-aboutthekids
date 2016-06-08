@@ -1,0 +1,9 @@
+<strong><h1>Activities</h1></strong>
+<p>_________________________________________</p>
+
+<% @activities.each do |activity| %>
+  <h2><%= activity.name %></h2>
+  <%= activity.description %>
+
+  <%= link_to "Show", activity_path(activity) %>
+<% end %>
