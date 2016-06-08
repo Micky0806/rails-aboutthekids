@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Activity.destroy_all
 
 Activity.create(
@@ -27,3 +28,4 @@ Activity.create(
   period_beginning: Date.new(2016,2,3),
   period_ending: Date.new(2017,1,5)
   )
+
