@@ -1,0 +1,13 @@
+<h1>Your Good ol' Booking</h1>
+<div class="container">
+<ul>
+<% if @bookings%>
+
+  <% @bookings.each do |booking| %>
+
+  <h2><li><%= booking.name %></li></h2>
+
+  <p><li><%= booking.age %></li></p>
+
+  <% end %>
+<% end %>
