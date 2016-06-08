@@ -1,0 +1,13 @@
+<h2>List of all your current activities</h2>
+
+<% @activities.each do |activity| %>
+  <h2><%= activity.name %></h2>
+  <p><%= activity.description %></p>
+  <p><%= activity.category %></p>
+  <p><%= activity.photo %></p>
+  <p><%= activity.address %></p>
+  <p><%= activity.city %></p>
+  <p><%= activity.price %></p>
+  <p><%= activity.period_beginning %></p>
+  <p><%= activity.period_ending %></p>
+<% end %>
