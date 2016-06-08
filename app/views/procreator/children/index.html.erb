@@ -1,0 +1,10 @@
+<h1>Your Good ol' Child</h1>
+<div class="container">
+<ul>
+<% @children.each do |child| %>
+
+<h2><li><%= child.name %></li></h2>
+
+<p><li><%= child.age %></li></p>
+
+<% end %>
