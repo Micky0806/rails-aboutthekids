@@ -6,12 +6,13 @@ class Procreator::ChildrenController < ApplicationController
 
   def new
     @child = Child.new
+    procreator = User.find(current_user.id)
   end
 
   def create
     @child = Child.new(params.require(:child).permit(:name, :age))
      @child.save!
-     redirect_to child_path(@child)
+     redirect_to procreator_children_path
   end
 
 
