@@ -1,6 +1,6 @@
 <h2>List of all your current activities</h2>
 
-<% @activities.each do |activity| %>
+<% current_user.activities.each do |activity| %>
   <h2>Activity's name : <%= link_to activity.name, owner_activity_path(activity) %></h2>
   <p>Description : <%= activity.description %></p>
   <p>Category : <%= activity.category %></p>

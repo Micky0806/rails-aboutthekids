@@ -1,7 +1,9 @@
 class Owner::ActivitiesController < ApplicationController
   before_action :find_activity, only: [ :show, :edit, :update, :destroy ]
   def index
+
     @activities = current_user.activities
+
   end
 
   def show
@@ -14,6 +16,8 @@ class Owner::ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params)
+    @activity.user = current_user
+
     @activity.save!
     redirect_to owner_activity_path(@activity)
   end
@@ -22,11 +26,13 @@ class Owner::ActivitiesController < ApplicationController
   end
 
   def update
-
-
+    @activity.update(activity_params)
+    redirect_to owner_activity_path(@activity)
   end
 
   def destroy
+    @activity.destroy
+    redirect_to owner_activities_path(@cocktails)
   end
 
 

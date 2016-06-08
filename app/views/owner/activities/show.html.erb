@@ -12,7 +12,7 @@
 <%=@activity.photo%>
 
 <%=link_to "List of all your activities", owner_activities_path(@activities)%>
-<%=link_to "UPDATE your activity", owner_activity_path(@activity)%>
+<%=link_to "UPDATE your activity", edit_owner_activity_path(@activity)%>
 <%=link_to "DELETE this activity", owner_activity_path(@activity),
   method: :delete,
   data: { confirm: "Are you sure?" }%>
