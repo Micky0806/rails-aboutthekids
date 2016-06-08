@@ -1,13 +1,9 @@
 <h2>List of all your current activities</h2>
 
 <% @activities.each do |activity| %>
-  <h2><%= activity.name %></h2>
-  <p><%= activity.description %></p>
-  <p><%= activity.category %></p>
-  <p><%= activity.photo %></p>
-  <p><%= activity.address %></p>
-  <p><%= activity.city %></p>
-  <p><%= activity.price %></p>
-  <p><%= activity.period_beginning %></p>
-  <p><%= activity.period_ending %></p>
+  <h2>Activity's name : <%= link_to activity.name, owner_activity_path(activity) %></h2>
+  <p>Description : <%= activity.description %></p>
+  <p>Category : <%= activity.category %></p>
 <% end %>
+<%=link_to "Create a new activity",new_owner_activity_path(@activity)%>
+

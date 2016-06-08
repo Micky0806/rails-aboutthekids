@@ -1,0 +1,19 @@
+<h2>Your activity in details</h2>
+
+<div class='text-center'>
+<h3><%=@activity.name%></h3>
+<h4><%@activity.description  %></h4>
+<p><%=@activity.category %></p>
+<p><%=@activity.address %></p>
+<p><%=@activity.city %></p>
+<p><%=@activity.price %></p>
+<p><%=@activity.period_beginning %></p>
+<p><%=@activity.period_ending %></p>
+<%=@activity.photo%>
+
+<%=link_to "List of all your activities", owner_activities_path(@activities)%>
+<%=link_to "UPDATE your activity", owner_activity_path(@activity)%>
+<%=link_to "DELETE this activity", owner_activity_path(@activity),
+  method: :delete,
+  data: { confirm: "Are you sure?" }%>
+</h3>
