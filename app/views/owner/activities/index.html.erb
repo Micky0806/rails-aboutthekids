@@ -1,9 +1,55 @@
-<h2>List of all your current activities</h2>
+<h2 class="title text-center ">List of all your current activities</h2>
+<div class="container">
+  <div class="row">
+    <% current_user.activities.each do |activity| %>
+    <div class="col-xs-12 col-md-6 text-center">
+      <div class="product">
+        <%=link_to owner_activity_path(activity) do %>
+        <%= image_tag("physical.jpg", class:"product-image") %>
+        <%end %>
+        <div class='product-body'>
+          <h3><%= activity.name%></h3>
+          <p><%= activity.category %></p>
+          <p><%= activity.description %></p>
+        </div>
+      </div>
+    </div>
+      <% end %>
+  </div>
 
-<% current_user.activities.each do |activity| %>
-  <h2>Activity's name : <%= link_to activity.name, owner_activity_path(activity) %></h2>
-  <p>Description : <%= activity.description %></p>
-  <p>Category : <%= activity.category %></p>
-<% end %>
-<%=link_to "Create a new activity",new_owner_activity_path(@activity)%>
+  <h2 class="index-title text-center">Not yet a activity, create one!</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <%=link_to new_owner_activity_path(@activity) do%>
+        <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "physical.jpg"  %> ');">
+          <div class="card-description-activity">
+            <h2>PHYSICAL</h2>
+          </div>
+        </div>
+        <%end  %>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <%=link_to new_owner_activity_path(@activity) do%>
+          <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "academic.jpg"  %> ');">
+            <div class="card-description-activity">
+              <h2>ACADEMIC</h2>
+            </div>
+          </div>
+          <%end  %>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-4">
+            <%=link_to new_owner_activity_path(@activity) do%>
+            <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "artistic.jpg"  %> ');">
+              <div class="card-description-activity">
+                <h2>ARTISTIC</h2>
+              </div>
+            </div>
+            <%end  %>
+          </div>
+        </div>
+
+
 

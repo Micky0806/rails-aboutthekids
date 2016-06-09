@@ -6,11 +6,11 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:facebook]
          has_many :children, dependent: :destroy
          has_many :bookings, through: :children, dependent: :destroy
-         has_many :activities
-         has_many :orders, through: :activities, dependent: :destroy, class_name: 'booking'
+         has_many :activities, dependent: :destroy
+         has_many :orders, through: :activities, dependent: :destroy, class_name: 'bookings'
 
   def self.find_for_facebook_oauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    where(email: auth.info.email).first_or_create do |user|
     user.provider = auth.provider
     user.uid = auth.uid
     user.email = auth.info.email
