@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
          has_many :activities
          has_many :orders, through: :activities, dependent: :destroy, class_name: 'booking'
 
+
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.provider = auth.provider
@@ -21,5 +22,5 @@ class User < ActiveRecord::Base
     user.token = auth.credentials.token
     user.token_expiry = Time.at(auth.credentials.expires_at)
     end
-  end
+end
 end
