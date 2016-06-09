@@ -1,13 +1,11 @@
 
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, url: profile_path) do |f| %>
   <p>First name:</p>
   <%= f.text_field :first_name %>
   <p>Last name:</p>
   <%= f.text_field :last_name %>
   <p>Phone number:</p>
   <%= f.text_field :phone_number %>
-  <p>Address:</p>
-  <%= f.text_field :address %>
   <% if @user.owner == true %>
     <p>Company name:</p>
   <%= f.text_field :company_name %>
