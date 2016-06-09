@@ -8,3 +8,7 @@
 <%= @user.email %>
 <p>Phone number:</p>
 <%= @user.phone_number %>
+
+<%= link_to "Edit profile", edit_profile_path(@user) %>
+
+<%= link_to "My bookings", procreator_bookings_path(@user) %>
