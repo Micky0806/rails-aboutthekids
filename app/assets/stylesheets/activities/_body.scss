@@ -1,31 +1,25 @@
 
-body {
+.activities-index {
   margin: 0;
   font-family: Open-sans, sans-serif;
   color: #756A66;
+  h3 {
+    font-family: Raleway, Helvetica, sans-serif;
+    color: #DADADA;
+  }
+  h1 {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    color: white;
+  }
+  h2 {
+    color: #756A66;
+  }
+  a {
+    text-decoration: none;
+  }
 }
-h1, h2, h3 {
-  font-family: Raleway, Helvetica, sans-serif;
-  color: #DADADA;
-}
-h1 {
-  margin-top: 100px;
-  margin-bottom: 70px;
-}
-h2 {
-  color: #756A66;
-}
-a {
-  text-decoration: none;
-}
-.text-center {
-  text-align: center;
-}
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding-bottom: 0px;
-}
+
 .list-inline li {
   display: inline-block;
 }
