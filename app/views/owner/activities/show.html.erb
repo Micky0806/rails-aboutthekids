@@ -1,4 +1,4 @@
-<h2 class='text-center'>Your activity in details</h2>
+<h2 class=' title text-center'>Your activity in details</h2>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-offset-3 col-md-6">
@@ -27,7 +27,7 @@
   </div>
 </div>
 
-<div class= text-center>
+<div class= " show-button text-center">
   <button type="button" class="btn btn-warning"><%=link_to "List of all your activities", owner_activities_path(@activities)%></button>
   <button type="button" class="btn btn-warning"><%=link_to "UPDATE your activity", edit_owner_activity_path(@activity)%></button>
   <button type="button" class="btn btn-warning"><%=link_to "DELETE this activity", owner_activity_path(@activity),
