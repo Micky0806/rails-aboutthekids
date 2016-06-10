@@ -1,7 +1,9 @@
 /* Your profile header CSS code here */
 
 .profile-header-wrapper {
-  background-image: image-url("countryside.jpg")
+  background-image: image-url("activities.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .text-center {
