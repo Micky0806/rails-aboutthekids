@@ -1,0 +1,28 @@
+
+body {
+  margin: 0;
+  font-family: Open-sans, sans-serif;
+  color: #F7F7F7;
+}
+h1, h2, h3 {
+  font-family: Raleway, Helvetica, sans-serif;
+}
+h2 {
+  color: #756A66;
+}
+a {
+  text-decoration: none;
+}
+.text-center {
+  text-align: center;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.list-inline li {
+  display: inline-block;
+}
+.list-inline {
+  list-style: none;
+}
