@@ -2,28 +2,35 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-offset-3 col-md-6">
-    <div class="card-show-activity" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('<%= image_path "academic.jpg"  %> ');">
-      <div class='show-description text-center'>
-        <h3><%=@activity.name%></h3>
+      <%if @activity.category == "sport"%>
+      <% @theme_activity = image_path "physical.jpg" %>
+      <% elsif @activity.category == "academic" %>
+      <% @theme_activity =  image_path "academic.jpg"  %>
+      <%else %>
+      <% @theme_activity = image_path "artistic.jpg"  %>
+      <%end  %>
+      <div class="card-show-activity" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('<%= @theme_activity  %> ');">
+        <div class='show-description text-center'>
+          <h3><%=@activity.name%></h3>
+        </div>
+        <div class= 'text-left'>
+          <p>Description : <%=@activity.description  %></p>
+          <p>Category : <%=@activity.category %></p>
+          <p><%=@activity.address %></p>
+          <p><%=@activity.city %></p>
+          <p><%=@activity.price %></p>
+          <p><%=@activity.period_beginning %></p>
+          <p><%=@activity.period_ending %></p>
+        </div>
       </div>
-      <div class= 'text-left'>
-        <p>Description : <%=@activity.description  %></p>
-        <p>Category : <%=@activity.category %></p>
-        <p><%=@activity.address %></p>
-        <p><%=@activity.city %></p>
-        <p><%=@activity.price %></p>
-        <p><%=@activity.period_beginning %></p>
-        <p><%=@activity.period_ending %></p>
-      </div>
-    </div>
     </div>
   </div>
 </div>
 
 <div class= text-center>
-<button type="button" class="btn btn-warning"><%=link_to "List of all your activities", owner_activities_path(@activities)%></button>
-<button type="button" class="btn btn-warning"><%=link_to "UPDATE your activity", edit_owner_activity_path(@activity)%></button>
-<button type="button" class="btn btn-warning"><%=link_to "DELETE this activity", owner_activity_path(@activity),
-  method: :delete,
-  data: { confirm: "Are you sure?" }%></button>
-</div>
+  <button type="button" class="btn btn-warning"><%=link_to "List of all your activities", owner_activities_path(@activities)%></button>
+  <button type="button" class="btn btn-warning"><%=link_to "UPDATE your activity", edit_owner_activity_path(@activity)%></button>
+  <button type="button" class="btn btn-warning"><%=link_to "DELETE this activity", owner_activity_path(@activity),
+    method: :delete,
+    data: { confirm: "Are you sure?" }%></button>
+  </div>
