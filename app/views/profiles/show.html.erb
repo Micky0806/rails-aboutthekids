@@ -1,0 +1,9 @@
+
+<h2><%= @user.first_name %> <%= @user.last_name %></h2>
+<p>_________________________________________</p>
+
+<% if @user.owner == true %>
+  <%= render 'shared/profile_owner' %>
+<% else %>
+  <%= render 'shared/profile_procreator' %>
+<% end %>

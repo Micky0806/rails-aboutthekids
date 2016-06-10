@@ -1,0 +1,19 @@
+
+<p>Photo if not facebook user:</p>
+<img src=<%= @user.photo %>>
+<p>Photo if facebook user:</p>
+<%= @user.picture %>
+<p>Type of account: Activity owner</p>
+<p>E-mail:</p>
+<%= @user.email %>
+<p>Phone number:</p>
+<%= @user.phone_number %>
+<p>Company name:
+<%= @user.company_name %>
+
+<h4><%= link_to "Edit profile", edit_profile_path(@user) %></h4>
+
+<p>_________________________________________</p>
+
+<h3> <%= link_to "My activities dashboard", owner_activities_path %> </h3>
+<h3> <%= link_to "List of all activities", activities_path %> </h3>
