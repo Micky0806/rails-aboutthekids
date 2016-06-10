@@ -20,6 +20,7 @@
     width: 100%;
     overflow: hidden;
     background: #000;
+    margin-top: -70px;
 }
 .video-container .poster img {
   background-size: 100vh;
@@ -52,6 +53,7 @@
   width: 100%;
   text-align: center;
   color: #fff;
+  padding-top: 70px;
 }
 
 .title-banner {
@@ -59,6 +61,7 @@
     font-weight: bold;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
     color: $dark-red;
+
 }
 .p-banner{
     font-size: 25px;
