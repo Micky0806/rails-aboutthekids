@@ -1,27 +1,30 @@
-<h2 class='text-center'>Create your new activity</h2>
+<h2 class='title-create text-center'>Create your new activity</h2>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-offset-3 col-md-6">
 <%= form_for(@activity, url:owner_activities_path, class:"form-inline")  do |f| %>
   <div class="form-group">
+  <div class="field">
   <%= f.label :name %>
-  <%= f.text_field :name, class: "form-control" %>
+  <%= f.text_field :name, placeholder: "insert name",class: "form-control" %>
+  <%= f.label :photo %>
   <%= f.file_field :photo %>
   <%=f.hidden_field :photo_cache%>
   <%= f.label :description %>
-  <%= f.text_area(:description, size: "24x6", class: "form-control") %>
+  <%= f.text_area(:description, placeholder: "descritpion", size: "24x6",  class: "form-control") %>
   <%= f.label :category %>
-  <%= f.text_field :category, class: "form-control" %>
+  <%= f.text_field :category, value: params[:category],  class: "form-control" %>
   <%= f.label :address %>
-  <%= f.text_field :address, class: "form-control" %>
+  <%= f.text_field :address, placeholder: "address", class: "form-control" %>
   <%= f.label :city %>
-  <%= f.text_field :city, class: "form-control" %>
+  <%= f.text_field :city, placeholder: " city", class: "form-control" %>
   <%= f.label :period_beginning %>
-  <%= f.text_field :period_beginning, class: "form-control" %>
+  <%= f.text_field :period_beginning, placeholder: "when does your activity starts?", class: "form-control" %>
   <%= f.label :period_ending %>
-  <%= f.text_field :period_ending, class: "form-control" %>
+  <%= f.text_field :period_ending, placeholder: "when does your activity ends?", class: "form-control" %>
   <%= f.label :price %>
-  <%= f.text_field :price, class: "form-control" %>
+  <%= f.text_field :price, placeholder: "price per month?", class: "form-control" %>
+  </div>
   <%= f.submit :create, class:"btn btn-primary form-control" %>
   </div>
 <% end %>

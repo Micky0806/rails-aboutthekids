@@ -17,11 +17,11 @@
       <% end %>
   </div>
 
-  <h2 class="index-title text-center">Not yet a activity, create one!</h2>
+  <h2 class="title text-center">Not yet a activity, create one!</h2>
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-4">
-        <%=link_to new_owner_activity_path(@activity) do%>
+        <%=link_to new_owner_activity_path(@activity,{category: "PHYSICAL"}) do%>
         <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "physical.jpg"  %> ');">
           <div class="card-description-activity">
             <h2>PHYSICAL</h2>
@@ -31,7 +31,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-md-4">
-          <%=link_to new_owner_activity_path(@activity) do%>
+          <%=link_to new_owner_activity_path(@activity, {category: "ACADEMIC"}) do%>
           <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "academic.jpg"  %> ');">
             <div class="card-description-activity">
               <h2>ACADEMIC</h2>
@@ -40,8 +40,8 @@
           <%end  %>
         </div>
         <div class="row">
-          <div class="col-xs-12 col-md-4">
-            <%=link_to new_owner_activity_path(@activity) do%>
+            <div class="col-xs-12 col-md-4">
+            <%=link_to new_owner_activity_path(@activity, {category: "ARTISTIC"}) do%>
             <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "artistic.jpg"  %> ');">
               <div class="card-description-activity">
                 <h2>ARTISTIC</h2>
