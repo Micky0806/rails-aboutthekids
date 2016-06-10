@@ -4,10 +4,9 @@
 <p>Photo if facebook user:</p>
 <%= @user.picture %>
 <p>Type of account: Parent</p>
-<p>E-mail:</p>
-<%= @user.email %>
-<p>Phone number:</p>
-<%= @user.phone_number %>
+<p>E-mail: <%= @user.email %></p>
+<p>Phone number: <%= @user.phone_number %></p>
+
 
 <h4><%= link_to "Edit profile", edit_profile_path(@user) %></h4>
 
