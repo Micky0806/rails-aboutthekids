@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-
+get "physical", to: "pages#physical"
+get "academic", to: "pages#academic"
+get "artistic", to: "pages#artistic"
   root "pages#home"
   # as visitor
   resources :activities, only: [:index, :show] do
