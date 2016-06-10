@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 Activity.destroy_all
 
 Activity.create(
