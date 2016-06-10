@@ -1,32 +1,108 @@
 
- <%= render 'shared/header' %>
+<%= render 'shared/header' %>
 
-     <div class="container">
-             <h2 class="text-center">What's your child's next footstep?</h2>
-             <div class="row">
-               <div class="col-xs-12 col-sm-4">
-                 <div class="card">
-                 <%= link_to(image_tag("basketball.png"), "/") %>
-                   <div class="card-category">Physical</div>
-                   <a class="card-link" href="#"></a>
-                 </div>
-               </div>
-               <div class="col-xs-12 col-sm-4">
-                 <div class="card">
-                 <%= link_to(image_tag("academic.png"), "/") %>
-                   <div class="card-category">Academic</div>
-                   <a class="card-link" href="#"></a>
-                 </div>
-               </div>
-               <div class="col-xs-12 col-sm-4">
-                 <div class="card">
-                 <%= link_to(image_tag("rsz_1artistic.png"), "/") %>
-                   <div class="card-category">Artistic</div>
-                   <a class="card-link" href="#"></a>
-                 </div>
-               </div>
-             </div>
-           </div>
+<h2 class="text-center">What's your child's next footstep?</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <%=link_to activities_path(@activities) do%>
+      <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "physical.jpg"  %> ');">
+        <div class="card-description-activity">
+          <h2>PHYSICAL</h2>
+        </div>
+      </div>
+      <%end  %>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <%=link_to activities_path(@activities) do%>
+        <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "academic.jpg"  %> ');">
+          <div class="card-description-activity">
+            <h2>ACADEMIC</h2>
+          </div>
+        </div>
+        <%end  %>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <%=link_to activities_path(@activities) do%>
+          <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "artistic.jpg"  %> ');">
+            <div class="card-description-activity">
+              <h2>ARTISTIC</h2>
+            </div>
+          </div>
+          <%end  %>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+ <div class="row">
+   <div class="col-xs-12 col-sm-4">
+     <div class="card">
+       <%= link_to(image_tag("basketball.png"), "/") %>
+       <div class="card-category">Physical</div>
+       <a class="card-link" href="#"></a>
+     </div>
+   </div>
+   <div class="col-xs-12 col-sm-4">
+     <div class="card">
+       <%= link_to(image_tag("academic.png"), "/") %>
+       <div class="card-category">Academic</div>
+       <a class="card-link" href="#"></a>
+     </div>
+   </div>
+   <div class="col-xs-12 col-sm-4">
+     <div class="card">
+       <%= link_to(image_tag("rsz_1artistic.png"), "/") %>
+       <div class="card-category">Artistic</div>
+       <a class="card-link" href="#"></a>
+     </div>
+   </div>
+ </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--
            <div class="container">
                  <div class="row">
@@ -52,4 +128,4 @@
                    </div>
                  </div>
                </div>
- -->
+             -->
