@@ -1,9 +1,8 @@
 
 <%= render 'shared/header' %>
-<div class="padding">
 <p class="p-write">What's your child's next footstep?</p>
 
-<div class="container padding">
+<div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-4">
       <%=link_to activities_path(@activities) do%>
@@ -13,28 +12,27 @@
         </div>
       </div>
       <%end  %>
+
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <%=link_to activities_path(@activities) do%>
-        <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "academic.jpg"  %> ');">
-          <div class="card-description-activity">
-            <h2>ACADEMIC</h2>
-          </div>
-        </div>
-        <%end  %>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-md-4">
-          <%=link_to activities_path(@activities) do%>
-          <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "artistic.jpg"  %> ');">
-            <div class="card-description-activity">
-              <h2>ARTISTIC</h2>
-            </div>
-          </div>
-          <%end  %>
+    <div class="col-xs-12 col-md-4">
+      <%=link_to activities_path(@activities) do%>
+      <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "academic.jpg"  %> ');">
+        <div class="card-description-activity">
+          <h2>ACADEMIC</h2>
         </div>
       </div>
+      <%end  %>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <%=link_to activities_path(@activities) do%>
+      <div class="card-activity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "artistic.jpg"  %> ');">
+        <div class="card-description-activity">
+          <h2>ARTISTIC</h2>
+        </div>
+      </div>
+      <%end  %>
+    </div>
+  </div>
 </div>
 
 
@@ -128,4 +126,4 @@
                    </div>
                  </div>
                </div>
-            -->
+             -->
