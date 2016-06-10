@@ -1,9 +1,56 @@
-<strong><h1>Activities</h1></strong>
-<p>_________________________________________</p>
 
-<% @activities.each do |activity| %>
-  <h2><%= activity.name %></h2>
-  <%= activity.description %>
+<!-- insert your profile header -->
+<div class="profile-header-wrapper">
+  <div class="container text-center">
 
-  <%= link_to "Show", activity_path(activity) %>
-<% end %>
+    <!-- Avatar and username -->
+    <div class="profile-header-infos">
+      <h1>Activities overview</h1>
+    </div>
+
+    <!-- Insert your <div class="tabs"> here -->
+    <div class="tabs">
+      <a class="tab" href="#">
+        <h3>350</h3>
+        <p>Physical</p>
+      </a>
+      <a class="tab" href="#">
+        <h3>302</h3>
+        <p>Academic</p>
+      </a>
+      <a class="tab" href="#">
+        <h3>189</h3>
+        <p>Artistic</p>
+      </a>
+      <a class="tab active" href="#">
+        <h3>870</h3>
+        <p>All</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="list-wrapper">
+  <div class="container">
+      <% @activities.each do |activity| %>
+        <%= link_to activity_path(activity) do  %>
+          <div class="product" >
+            <div class='product-upvote'>
+              <div class="product-arrow"></div>
+              <div class='product-count'>95</div>
+            </div>
+            <img class="product-image" src=<%= activity.photo %>>
+            <div class='product-body'>
+              <h3><%= activity.name %></h3>
+              <p><%= activity.description %></p>
+            </div>
+            <ul class="product-controls list-inline ">
+              <li><i class="fa fa-heart"></i></li>
+              <li><i class="fa fa-share"></i></li>
+              <li><i class="fa fa-star"></i></li>
+            </ul>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
