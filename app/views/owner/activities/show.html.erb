@@ -1,10 +1,10 @@
 <h2 class=' title text-center'>Your activity in details</h2>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-offset-3 col-md-6">
-      <%if @activity.category == "sport"%>
+    <div class="col-xs-12 col-md-offset-2 col-md-8">
+      <%if @activity.category == "PHYSICAL"%>
       <% @theme_activity = image_path "physical.jpg" %>
-      <% elsif @activity.category == "academic" %>
+      <% elsif @activity.category == "ACADEMIC" %>
       <% @theme_activity =  image_path "academic.jpg"  %>
       <%else %>
       <% @theme_activity = image_path "artistic.jpg"  %>
@@ -13,7 +13,7 @@
         <div class='show-description text-center'>
           <h3><%=@activity.name%></h3>
         </div>
-        <div class= 'text-left'>
+        <div class= 'show-view-activity'>
           <p>Description : <%=@activity.description  %></p>
           <p>Category : <%=@activity.category %></p>
           <p><%=@activity.address %></p>

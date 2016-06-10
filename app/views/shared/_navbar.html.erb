@@ -15,13 +15,7 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
-      <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
-      <% end %>
+
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
@@ -34,7 +28,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to root_path do %>
                 <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
               <% end %>
             </li>
@@ -50,13 +44,13 @@
     <% else %>
 
       <!-- Login text link  need to change paths    -->
-      <%= link_to t(".sign_in", default: "Home"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Home"), root_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
 
 
      <!--Home text link need to change paths-->
 
-      <%= link_to t(".sign_in", default: "About"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "About"), root_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
      <!--About text link -->
 
@@ -66,7 +60,7 @@
 
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "I'm an Instructor!"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "I'm an Instructor!"), owner_activities_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
