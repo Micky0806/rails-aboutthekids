@@ -2,10 +2,10 @@
 <div class="container">
   <div class="row">
     <% current_user.activities.each do |activity| %>
-    <div class="col-xs-12 col-md-6 text-center">
+    <div class="col-xs-12 col-md-12">
       <div class="product">
         <%=link_to owner_activity_path(activity) do %>
-        <%= image_tag("physical.jpg", class:"product-image") %>
+        <%= cl_image_tag activity.photo, class:"product-image" %>
         <%end %>
         <div class='product-body'>
           <h3><%= activity.name%></h3>
