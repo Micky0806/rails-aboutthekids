@@ -15,3 +15,12 @@
 <!--Should lead to new_activity_booking_path--> </h3>
 
 <h3> <%= link_to "List of all activities", activities_path %> </h3>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var coord = <%= raw @activity_coordinates %>;
+      alert('Activity coordinates are ' + coord.latitude + ', ' + coord.longitude);
+    });
+  <% end %>
+<% end %>

@@ -3,10 +3,14 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
-  end
+    @markers = Gmaps4rails.build_markers(@activities) do |activity, marker|
+     marker.lat activity.latitude
+     marker.lng activity.longitude
+   end
+ end
 
-  def show
+   def show
     @activity = Activity.find(params[:id])
+    @activity_coordinates = { lat: @activity.latitude, lng: @activity.longitude }
   end
-
 end
