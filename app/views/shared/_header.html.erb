@@ -1,22 +1,29 @@
 <div class="homepage-hero-module">
-    <div class="video-container">
-    <div class="title-container">
-    <div class="headline">
-    <h1 class="title-banner">ABOUT THE KIDS</h1>
-     <p class="p-banner">Find the right activity for your child</div>
+  <div class="video-container">
+    <div class="banner-content">
+      <h1 class="title-banner">ABOUT THE KIDS</h1>
+      <p class="p-banner">Find the right activity for your child</p>
+
+      <%= form_tag activities_path, method: :get do %>
+      <%= label :location, "Search activities near : " %>
+      <%= text_field_tag :location, params[:location], placeholder: "type the ideal city for your child activity",class:"location" %>
+
+      <%= label :distance, "Distance : " %>
+      <%= text_field_tag :distance, params[:distance], placeholder: "km around",class:"distance"  %>
+
+      <%= submit_tag "Search" %>
+      <% end %>
+
     </div>
-    <div class="filter"></div>
 
+    <video autoplay loop class="fillWidth">
+      <source src="<%= video_path("Hoola.mp4") %> " type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        <!-- need to do web m for mobile and the jpeg  -->
+        <source src="PATH_TO_WEBM" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      </video>
 
-
-        <video autoplay loop class="fillWidth">
-            <source src="<%= video_path("Hoola.mp4") %> " type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            <!-- need to do web m for mobile and the jpeg  -->
-            <source src="PATH_TO_WEBM" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-        </video>
-
-        <div class="poster hidden">
-            <img src="PATH_TO_JPEG" alt="">
-        </div>
+      <div class="poster hidden">
+        <img src="PATH_TO_JPEG" alt="">
+      </div>
     </div>
-</div>
+  </div>

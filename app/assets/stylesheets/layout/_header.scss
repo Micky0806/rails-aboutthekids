@@ -2,6 +2,9 @@
     border-right: none;
     border-left: none;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .no-video .video-container video,
 .touch .video-container video {
@@ -46,14 +49,14 @@
     width: 100%;
 }
 
-.title-container {
+.banner-content {
   z-index: 1000;
-  position: absolute;
   top: 35%;
   width: 100%;
   text-align: center;
   color: white;
   padding-top: 70px;
+  position:absolute;
 }
 
 .title-banner {
@@ -70,7 +73,9 @@
     margin-bottom: 50px;
 }
 
-.row {
-    margin-right: -15px;
-    margin-left: -15px;
+.location{
+color:black;
+}
+.distance{
+color:black;
 }
