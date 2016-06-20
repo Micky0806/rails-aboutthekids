@@ -3,17 +3,6 @@
     <div class="banner-content">
       <h1 class="title-banner">ABOUT THE KIDS</h1>
       <p class="p-banner">Find the right activity for your child</p>
-
-      <%= form_tag activities_path, method: :get do %>
-      <%= label :location, "Search activities near : " %>
-      <%= text_field_tag :location, params[:location], placeholder: "type the ideal city for your child activity",class:"location" %>
-
-      <%= label :distance, "Distance : " %>
-      <%= text_field_tag :distance, params[:distance], placeholder: "km around",class:"distance"  %>
-
-      <%= submit_tag "Search" %>
-      <% end %>
-
     </div>
 
     <video autoplay loop class="fillWidth">
