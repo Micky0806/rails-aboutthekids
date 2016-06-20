@@ -13,6 +13,19 @@ handler.fitMapToBounds();
 <% end %>
 <% end %>
 
+<div class="search-geocode text-center">
+<%= form_tag activities_path, method: :get do %>
+<%= label :location, "Search activities near : " %>
+<%= text_field_tag :location, params[:location], placeholder: "type the ideal city for your child activity",class:"location" %>
+
+<%= label :distance, "Distance : " %>
+<%= text_field_tag :distance, params[:distance], placeholder: "km around",class:"distance"  %>
+
+<%= submit_tag "Search", class:"bt btn-danger" %>
+<% end %>
+</div>
+
+
 <!-- insert your profile header -->
 <div class="container">
   <div class="row">
