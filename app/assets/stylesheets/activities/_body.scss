@@ -7,13 +7,9 @@
     font-family: Raleway, Helvetica, sans-serif;
     color: #DADADA;
   }
-  h1 {
-    margin-top: 100px;
-    margin-bottom: 70px;
-    color: white;
-  }
+
   h2 {
-    color: #756A66;
+    color: white;
   }
   a {
     text-decoration: none;
@@ -26,3 +22,7 @@
 .list-inline {
   list-style: none;
 }
+
+.search-geocode{
+padding:10px 0px 10px 0px;
+margin: 10px 0px 10px 0px; ;}

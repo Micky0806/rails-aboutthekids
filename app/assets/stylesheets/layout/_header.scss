@@ -2,6 +2,9 @@
     border-right: none;
     border-left: none;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .no-video .video-container video,
 .touch .video-container video {
@@ -46,31 +49,33 @@
     width: 100%;
 }
 
-.title-container {
+.banner-content {
   z-index: 1000;
-  position: absolute;
   top: 35%;
   width: 100%;
   text-align: center;
-  color: #fff;
+  color: white;
   padding-top: 70px;
+  position:absolute;
 }
 
 .title-banner {
     font-size: 50px;
     font-weight: bold;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-    color: $dark-red;
+    color: white;
 
 }
 .p-banner{
     font-size: 25px;
     font-weight: lighter;
-    color: $dark-red;
+    color: white;
     margin-bottom: 50px;
 }
 
-.row {
-    margin-right: -15px;
-    margin-left: -15px;
+.location{
+color:black;
+}
+.distance{
+color:black;
 }

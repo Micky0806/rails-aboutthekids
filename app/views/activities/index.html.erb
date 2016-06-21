@@ -1,56 +1,50 @@
+<div id="map" style="width: 100%; height: 320px;"></div>
 
-<!-- insert your profile header -->
-<div class="profile-header-wrapper">
-  <div class="container text-center">
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+$(document).on('ready', function() {
+handler = Gmaps.build('Google');
+handler.buildMap({ internal: { id: 'map' } }, function(){
+markers = handler.addMarkers(<%= raw @markers.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+});
+})
+<% end %>
+<% end %>
 
-    <!-- Avatar and username -->
-    <div class="profile-header-infos">
-      <h1>Activities overview</h1>
-    </div>
+<div class="search-geocode text-center">
+<%= form_tag activities_path, method: :get do %>
+<%= label :location, "Search activities near : " %>
+<%= text_field_tag :location, params[:location], placeholder: "type the ideal city for your child activity",class:"location" %>
 
-    <!-- Insert your <div class="tabs"> here -->
-    <div class="tabs">
-      <a class="tab" href="#">
-        <h3>350</h3>
-        <p>Physical</p>
-      </a>
-      <a class="tab" href="#">
-        <h3>302</h3>
-        <p>Academic</p>
-      </a>
-      <a class="tab" href="#">
-        <h3>189</h3>
-        <p>Artistic</p>
-      </a>
-      <a class="tab active" href="#">
-        <h3>870</h3>
-        <p>All</p>
-      </a>
-    </div>
-  </div>
+<%= label :distance, "Distance : " %>
+<%= text_field_tag :distance, params[:distance], placeholder: "km around",class:"distance"  %>
+
+<%= submit_tag "Search", class:"bt btn-danger" %>
+<% end %>
 </div>
 
-<div class="list-wrapper">
-  <div class="container">
-      <% @activities.each do |activity| %>
-        <%= link_to activity_path(activity) do  %>
-          <div class="product" >
-            <div class='product-upvote'>
-              <div class="product-arrow"></div>
-              <div class='product-count'>95</div>
-            </div>
 
-            <div class='product-body'>
-              <h3><%= activity.name %></h3>
-              <p><%= activity.description %></p>
-            </div>
-            <ul class="product-controls list-inline ">
-              <li><i class="fa fa-heart"></i></li>
-              <li><i class="fa fa-share"></i></li>
-              <li><i class="fa fa-star"></i></li>
-            </ul>
-          </div>
-        <% end %>
-      <% end %>
+<!-- insert your profile header -->
+<div class="container">
+  <div class="row">
+    <%@activities.each do |activity| %>
+    <div class="col-xs-12 col-md-4">
+    <%=link_to activity_path(activity), class: 'card-link' do %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=image_path "physical.jpg" %>');">
+      <%end  %>
+        <div class="card-category">
+          <%=activity.category %>
+        </div>
+        <div class="card-description">
+          <h2><%=activity.name %></h2>
+          <p><%=activity.description %></p>
+        </div>
+        <%=cl_image_tag activity.photo, class: "card-user avatar" %>
+      </div>
     </div>
+    <% end %>
   </div>
+
+
