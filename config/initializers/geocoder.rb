@@ -4,3 +4,4 @@ Geocoder.configure(
   use_https: true,
   units:     :km       # :km for kilometers or :mi for mile
 )
+
