@@ -1,52 +1,14 @@
-.homepage-hero-module {
-    border-right: none;
-    border-left: none;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.no-video .video-container video,
-.touch .video-container video {
-    display: none;
-}
-.no-video .video-container .poster,
-.touch .video-container .poster {
-    display: block !important;
-}
-.video-container {
-    background-size: 100vh;
-    position: relative;
-    bottom: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background: #000;
-    margin-top: -70px;
-}
-.video-container .poster img {
-  background-size: 100vh;
-    width: 100%;
-    bottom: 0;
-    position: absolute;
-}
-.video-container .filter {
-    background-size: 100vh;
-    z-index: 100;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    width: 100%;
-}
-.video-container video {
-    background-size: 100vh;
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
-}
-.video-container video.fillWidth {
-    background-size: 100vh;
-    width: 100%;
+.background-banner{
+    background-image: linear-gradient(-225deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.35) 50%), url('physical.jpg');
+    color: white;
+    text-align: center;
+    height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */ 
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+background-repeat: none;
 }
 
 .banner-content {
@@ -74,8 +36,9 @@
 }
 
 .location{
-color:black;
+    color:black;
 }
+
 .distance{
-color:black;
+    color:black;
 }
